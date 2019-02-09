@@ -1,5 +1,5 @@
 //
-//  ToDoItem.siwft.swift
+//  ToDoItem.swift
 //  ToDo
 //
 //  Created by Kazuki Ohara on 2019/02/03.
