@@ -28,6 +28,9 @@
 		66A49FED221163F0006124A5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66A49FEC221163F0006124A5 /* MapKit.framework */; };
 		66A49FEF221179CE006124A5 /* InputViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A49FEE221179CE006124A5 /* InputViewControllerTests.swift */; };
 		66A49FF122117A34006124A5 /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A49FF022117A34006124A5 /* InputViewController.swift */; };
+		66A49FF32211AF48006124A5 /* APIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A49FF22211AF48006124A5 /* APIClientTests.swift */; };
+		66A49FF52211B05E006124A5 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A49FF42211B05E006124A5 /* APIClient.swift */; };
+		66A49FF72211B543006124A5 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A49FF62211B543006124A5 /* Token.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +69,9 @@
 		66A49FEC221163F0006124A5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		66A49FEE221179CE006124A5 /* InputViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewControllerTests.swift; sourceTree = "<group>"; };
 		66A49FF022117A34006124A5 /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
+		66A49FF22211AF48006124A5 /* APIClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientTests.swift; sourceTree = "<group>"; };
+		66A49FF42211B05E006124A5 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		66A49FF62211B543006124A5 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +122,8 @@
 				665BD0642205755400962750 /* Assets.xcassets */,
 				665BD0662205755400962750 /* LaunchScreen.storyboard */,
 				665BD0692205755400962750 /* Info.plist */,
+				66A49FF42211B05E006124A5 /* APIClient.swift */,
+				66A49FF62211B543006124A5 /* Token.swift */,
 			);
 			path = ToDo;
 			sourceTree = "<group>";
@@ -126,6 +134,7 @@
 				66A49FE422115E4C006124A5 /* Controller */,
 				665BD0882206BC9100962750 /* Model */,
 				665BD0742205755400962750 /* Info.plist */,
+				66A49FF22211AF48006124A5 /* APIClientTests.swift */,
 			);
 			path = ToDoTests;
 			sourceTree = "<group>";
@@ -292,9 +301,11 @@
 				66A49FF122117A34006124A5 /* InputViewController.swift in Sources */,
 				665BD08022068C1600962750 /* ToDoItem.swift in Sources */,
 				662219DF22075378003B1FE0 /* ItemListDataProvider.swift in Sources */,
+				66A49FF52211B05E006124A5 /* APIClient.swift in Sources */,
 				665BD0912206BD7200962750 /* ItemManager.swift in Sources */,
 				665BD0822206999300962750 /* Location.swift in Sources */,
 				665D7D692209FBC60025FFB4 /* ItemCell.swift in Sources */,
+				66A49FF72211B543006124A5 /* Token.swift in Sources */,
 				665BD05E2205755300962750 /* AppDelegate.swift in Sources */,
 				662219DD22074A4E003B1FE0 /* ItemListViewController.swift in Sources */,
 				66A49FEA2211614E006124A5 /* DetailViewController.swift in Sources */,
@@ -311,6 +322,7 @@
 				66A49FEF221179CE006124A5 /* InputViewControllerTests.swift in Sources */,
 				665BD08D2206BCAF00962750 /* ToDoItemTests.swift in Sources */,
 				66A49FE822116035006124A5 /* DetailViewControllerTests.swift in Sources */,
+				66A49FF32211AF48006124A5 /* APIClientTests.swift in Sources */,
 				662219DB22074909003B1FE0 /* ItemListViewControllerTest.swift in Sources */,
 				665BD08C2206BCAF00962750 /* LocationTests.swift in Sources */,
 			);
