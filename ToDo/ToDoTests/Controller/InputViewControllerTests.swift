@@ -63,8 +63,8 @@ class InputViewControllerTests: XCTestCase {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd/yyyy"
 
-        let timestamp = 1456066800.0
-        let date = Date(timeIntervalSince1970: timestamp)
+        let date = dateFormatter.date(from: "08/27/2017")!
+        let timestamp = date.timeIntervalSince1970
 
         sut.titleTextField.text = "Foo"
         sut.dateTextField.text = dateFormatter.string(from: date)
