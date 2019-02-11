@@ -11,6 +11,7 @@
 		662219DD22074A4E003B1FE0 /* ItemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662219DC22074A4E003B1FE0 /* ItemListViewController.swift */; };
 		662219DF22075378003B1FE0 /* ItemListDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662219DE22075378003B1FE0 /* ItemListDataProvider.swift */; };
 		662219E12209E0A7003B1FE0 /* ItemListDataProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662219E02209E0A7003B1FE0 /* ItemListDataProviderTests.swift */; };
+		6623E5DD220ED29800E14104 /* ItemCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6623E5DC220ED29800E14104 /* ItemCellTests.swift */; };
 		665BD05E2205755300962750 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665BD05D2205755300962750 /* AppDelegate.swift */; };
 		665BD0632205755300962750 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 665BD0612205755300962750 /* Main.storyboard */; };
 		665BD0652205755400962750 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 665BD0642205755400962750 /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 		662219DC22074A4E003B1FE0 /* ItemListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListViewController.swift; sourceTree = "<group>"; };
 		662219DE22075378003B1FE0 /* ItemListDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListDataProvider.swift; sourceTree = "<group>"; };
 		662219E02209E0A7003B1FE0 /* ItemListDataProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListDataProviderTests.swift; sourceTree = "<group>"; };
+		6623E5DC220ED29800E14104 /* ItemCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCellTests.swift; sourceTree = "<group>"; };
 		665BD05A2205755300962750 /* ToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		665BD05D2205755300962750 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		665BD0622205755300962750 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				665BD0742205755400962750 /* Info.plist */,
 				662219DA22074909003B1FE0 /* ItemListViewControllerTest.swift */,
 				662219E02209E0A7003B1FE0 /* ItemListDataProviderTests.swift */,
+				6623E5DC220ED29800E14104 /* ItemCellTests.swift */,
 			);
 			path = ToDoTests;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6623E5DD220ED29800E14104 /* ItemCellTests.swift in Sources */,
 				662219E12209E0A7003B1FE0 /* ItemListDataProviderTests.swift in Sources */,
 				665BD08E2206BCAF00962750 /* ItemManagerTests.swift in Sources */,
 				665BD08D2206BCAF00962750 /* ToDoItemTests.swift in Sources */,
