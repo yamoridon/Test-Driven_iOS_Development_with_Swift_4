@@ -24,7 +24,7 @@ class ItemCell: UITableViewCell {
             let attributeString = NSAttributedString(
                 string: item.title,
                 attributes: [
-                    .strikethroughStyle:NSUnderlineStyle.single.rawValue
+                    .strikethroughStyle: NSUnderlineStyle.single.rawValue
                 ]
             )
             titleLabel.attributedText = attributeString
@@ -36,7 +36,6 @@ class ItemCell: UITableViewCell {
 
             if let timestamp = item.timestamp {
                 let date = Date(timeIntervalSince1970: timestamp)
-
                 dateLabel.text = dateFormatter.string(from: date)
             }
         }
