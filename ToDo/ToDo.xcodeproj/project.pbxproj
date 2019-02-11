@@ -97,15 +97,14 @@
 		665BD05C2205755300962750 /* ToDo */ = {
 			isa = PBXGroup;
 			children = (
+				66A49FE522115E5C006124A5 /* View */,
+				66A49FE322115E27006124A5 /* Controller */,
 				665BD08F2206BD4F00962750 /* Model */,
 				665BD05D2205755300962750 /* AppDelegate.swift */,
 				665BD0612205755300962750 /* Main.storyboard */,
 				665BD0642205755400962750 /* Assets.xcassets */,
 				665BD0662205755400962750 /* LaunchScreen.storyboard */,
 				665BD0692205755400962750 /* Info.plist */,
-				662219DC22074A4E003B1FE0 /* ItemListViewController.swift */,
-				662219DE22075378003B1FE0 /* ItemListDataProvider.swift */,
-				665D7D682209FBC60025FFB4 /* ItemCell.swift */,
 			);
 			path = ToDo;
 			sourceTree = "<group>";
@@ -113,11 +112,10 @@
 		665BD0712205755400962750 /* ToDoTests */ = {
 			isa = PBXGroup;
 			children = (
+				66A49FE622115E68006124A5 /* View */,
+				66A49FE422115E4C006124A5 /* Controller */,
 				665BD0882206BC9100962750 /* Model */,
 				665BD0742205755400962750 /* Info.plist */,
-				662219DA22074909003B1FE0 /* ItemListViewControllerTest.swift */,
-				662219E02209E0A7003B1FE0 /* ItemListDataProviderTests.swift */,
-				6623E5DC220ED29800E14104 /* ItemCellTests.swift */,
 			);
 			path = ToDoTests;
 			sourceTree = "<group>";
@@ -140,6 +138,40 @@
 				665BD0902206BD7200962750 /* ItemManager.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		66A49FE322115E27006124A5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				662219DC22074A4E003B1FE0 /* ItemListViewController.swift */,
+				662219DE22075378003B1FE0 /* ItemListDataProvider.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		66A49FE422115E4C006124A5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				662219DA22074909003B1FE0 /* ItemListViewControllerTest.swift */,
+				662219E02209E0A7003B1FE0 /* ItemListDataProviderTests.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		66A49FE522115E5C006124A5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				665D7D682209FBC60025FFB4 /* ItemCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		66A49FE622115E68006124A5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6623E5DC220ED29800E14104 /* ItemCellTests.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
