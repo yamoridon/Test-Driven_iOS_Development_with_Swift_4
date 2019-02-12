@@ -226,10 +226,10 @@
 			buildConfigurationList = 665BD0772205755400962750 /* Build configuration list for PBXNativeTarget "ToDo" */;
 			buildPhases = (
 				DB4F23B1EBDA08E004D030D3 /* [CP] Check Pods Manifest.lock */,
+				66844F6A221347CD0090C404 /* SwiftLint */,
 				665BD0562205755300962750 /* Sources */,
 				665BD0572205755300962750 /* Frameworks */,
 				665BD0582205755300962750 /* Resources */,
-				66844F6A221347CD0090C404 /* SwiftLint */,
 			);
 			buildRules = (
 			);
