@@ -36,20 +36,39 @@ class InputViewController: UIViewController {
             date = nil
         }
         let descriptionString = descriptionTextField.text
-        guard let locationName = locationTextField.text, !locationName.isEmpty else { return }
-        guard let address = addressTextField.text, !address.isEmpty else { return }
-        geocoder.geocodeAddressString(address) { [unowned self] placeMarks, error in
-            let placeMark = placeMarks?.first
+        if let locationName = locationTextField.text, !locationName.isEmpty {
+            if let address = addressTextField.text, !address.isEmpty {
+                geocoder.geocodeAddressString(address) { [unowned self] placeMarks, error in
+                    let placeMark = placeMarks?.first
+                    let item = ToDoItem(
+                        title: titleString,
+                        itemDescription: descriptionString,
+                        timestamp: date?.timeIntervalSince1970,
+                        location: Location(
+                            name: locationName,
+                            coordinate: placeMark?.location?.coordinate
+                        )
+                    )
+                    self.itemManager?.add(item)
+                }
+            } else {
+                let item = ToDoItem(
+                    title: titleString,
+                    itemDescription: descriptionString,
+                    timestamp: date?.timeIntervalSince1970,
+                    location: Location(name: locationName)
+                )
+                itemManager?.add(item)
+            }
+        } else {
             let item = ToDoItem(
                 title: titleString,
                 itemDescription: descriptionString,
-                timestamp: date?.timeIntervalSince1970,
-                location: Location(
-                    name: locationName,
-                    coordinate: placeMark?.location?.coordinate
-                )
+                timestamp: date?.timeIntervalSince1970
             )
-            self.itemManager?.add(item)
+            itemManager?.add(item)
         }
+
+        dismiss(animated: true, completion: nil)
     }
 }

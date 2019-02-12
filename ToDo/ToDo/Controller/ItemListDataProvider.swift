@@ -13,7 +13,7 @@ enum Section: Int {
     case done
 }
 
-class ItemListDataProvider: NSObject, UITableViewDataSource, UITableViewDelegate {
+class ItemListDataProvider: NSObject, UITableViewDataSource, UITableViewDelegate, ItemManagerSettable {
     var itemManager: ItemManager?
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -79,4 +79,8 @@ class ItemListDataProvider: NSObject, UITableViewDataSource, UITableViewDelegate
         }
         tableView.reloadData()
     }
+}
+
+@objc protocol ItemManagerSettable {
+    var itemManager: ItemManager? { get set }
 }
