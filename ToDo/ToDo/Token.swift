@@ -9,5 +9,6 @@
 import Foundation
 
 struct Token {
+    // swiftlint:disable identifier_name
     let id: String
 }

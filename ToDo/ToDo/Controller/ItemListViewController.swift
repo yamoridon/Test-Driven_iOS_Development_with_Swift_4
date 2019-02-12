@@ -30,7 +30,8 @@ class ItemListViewController: UIViewController {
     }
 
     @IBAction func addItem(_ sender: UIBarButtonItem) {
-        if let nextViewController = storyboard?.instantiateViewController(withIdentifier: "InputViewController") as? InputViewController {
+        if let nextViewController = storyboard?
+            .instantiateViewController(withIdentifier: "InputViewController") as? InputViewController {
             nextViewController.itemManager = itemManager
             present(nextViewController, animated: true, completion: nil)
         }

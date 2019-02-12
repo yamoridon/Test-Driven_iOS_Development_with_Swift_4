@@ -21,7 +21,7 @@ class LocationTests: XCTestCase {
     func test_Init_SetsCoordinate() {
         let coordinate = CLLocationCoordinate2D(latitude: 1, longitude: 2)
         let location = Location(name: "", coordinate: coordinate)
-        
+
         XCTAssertEqual(location.coordinate?.latitude, coordinate.latitude)
         XCTAssertEqual(location.coordinate?.longitude, coordinate.longitude)
     }
@@ -64,7 +64,7 @@ class LocationTests: XCTestCase {
         secondLongLat: (Double, Double)?,
         line: UInt = #line
     ) {
-        var firstCoord: CLLocationCoordinate2D? = nil
+        var firstCoord: CLLocationCoordinate2D?
         if let firstLongLat = firstLongLat {
             firstCoord = CLLocationCoordinate2D(
                 latitude: firstLongLat.0,
@@ -73,7 +73,7 @@ class LocationTests: XCTestCase {
         }
         let firstLocation = Location(name: firstName, coordinate: firstCoord)
 
-        var secondCoord: CLLocationCoordinate2D? = nil
+        var secondCoord: CLLocationCoordinate2D?
         if let secondLongLat = secondLongLat {
             secondCoord = CLLocationCoordinate2D(
                 latitude: secondLongLat.0,

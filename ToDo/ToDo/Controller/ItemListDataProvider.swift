@@ -31,7 +31,9 @@ class ItemListDataProvider: NSObject, UITableViewDataSource, UITableViewDelegate
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as? ItemCell else {
+            fatalError()
+        }
 
         guard let itemManger = itemManager else { fatalError() }
         guard let section = Section(rawValue: indexPath.section) else { fatalError() }
@@ -67,7 +69,11 @@ class ItemListDataProvider: NSObject, UITableViewDataSource, UITableViewDelegate
         return buttonTitle
     }
 
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(
+        _ tableView: UITableView,
+        commit editingStyle: UITableViewCell.EditingStyle,
+        forRowAt indexPath: IndexPath
+    ) {
         guard let itemManager = itemManager else { fatalError() }
         guard let section = Section(rawValue: indexPath.section) else { fatalError() }
 

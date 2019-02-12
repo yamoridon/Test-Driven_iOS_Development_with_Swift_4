@@ -73,7 +73,7 @@ class APIClientTests: XCTestCase {
         sut.session = mockURLSession
 
         let tokenExpectation = expectation(description: "Token")
-        var caughtToken: Token? = nil
+        var caughtToken: Token?
         sut.loginUser(withName: "Foo", password: "Bar") { token, _ in
             caughtToken = token
             tokenExpectation.fulfill()
@@ -84,20 +84,19 @@ class APIClientTests: XCTestCase {
         }
     }
 
-
     func test_LoginWhenJSONIsInvalid_RetrunsError() {
         mockURLSession = MockURLSession(data: nil, urlResponse: nil, error: nil)
 
         sut.session = mockURLSession
 
         let errorExpectation = expectation(description: "Error")
-        var catchedError: Error? = nil
-        sut.loginUser(withName: "Foo", password: "Bar") { token, error in
+        var catchedError: Error?
+        sut.loginUser(withName: "Foo", password: "Bar") { _, error in
             catchedError = error
             errorExpectation.fulfill()
         }
 
-        waitForExpectations(timeout: 1) { error in
+        waitForExpectations(timeout: 1) { _ in
             XCTAssertNotNil(catchedError)
         }
     }
@@ -110,13 +109,13 @@ class APIClientTests: XCTestCase {
         sut.session = mockURLSession
 
         let errorExpectation = expectation(description: "Error")
-        var catchedError: Error? = nil
-        sut.loginUser(withName: "Foo", password: "Bar") { token, error in
+        var catchedError: Error?
+        sut.loginUser(withName: "Foo", password: "Bar") { _, error in
             catchedError = error
             errorExpectation.fulfill()
         }
 
-        waitForExpectations(timeout: 1) { error in
+        waitForExpectations(timeout: 1) { _ in
             XCTAssertNotNil(catchedError)
         }
     }
@@ -151,6 +150,7 @@ extension APIClientTests {
         private let urlResponse: URLResponse?
         private let responseError: Error?
 
+        // swiftlint:disable nesting
         typealias CompletionHandler = (Data?, URLResponse?, Error?) -> Void
         var completionHandler: CompletionHandler?
 

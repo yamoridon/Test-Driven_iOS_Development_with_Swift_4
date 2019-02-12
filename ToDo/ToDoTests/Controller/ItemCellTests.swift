@@ -16,14 +16,18 @@ class ItemCellTests: XCTestCase {
 
     override func setUp() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "ItemListViewController") as! ItemListViewController
+        let controller = storyboard
+            .instantiateViewController(withIdentifier: "ItemListViewController") as? ItemListViewController
+        XCTAssertNotNil(controller)
 
-        controller.loadViewIfNeeded()
+        controller?.loadViewIfNeeded()
 
-        tableView = controller.tableView
+        tableView = controller?.tableView
         tableView?.dataSource = dataSource
 
-        cell = (tableView?.dequeueReusableCell(withIdentifier: "ItemCell", for: IndexPath(row: 0, section: 0)) as! ItemCell)
+        cell = tableView?
+            .dequeueReusableCell(withIdentifier: "ItemCell", for: IndexPath(row: 0, section: 0)) as? ItemCell
+        XCTAssertNotNil(cell)
     }
 
     override func tearDown() {

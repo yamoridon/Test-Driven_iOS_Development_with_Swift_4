@@ -16,7 +16,8 @@ class InputViewControllerTests: XCTestCase {
 
     override func setUp() {
         let storybard = UIStoryboard(name: "Main", bundle: nil)
-        sut = (storybard.instantiateViewController(withIdentifier: "InputViewController") as! InputViewController)
+        sut = storybard.instantiateViewController(withIdentifier: "InputViewController") as? InputViewController
+        XCTAssertNotNil(sut)
 
         sut.loadViewIfNeeded()
     }
@@ -120,7 +121,7 @@ class InputViewControllerTests: XCTestCase {
         let geocoderAnswered = expectation(description: "Geocoder")
 
         let address = "Infinite Loop 1, Cupertino"
-        CLGeocoder().geocodeAddressString(address) { placemarks, error in
+        CLGeocoder().geocodeAddressString(address) { placemarks, _ in
             let coordinate = placemarks?.first?.location?.coordinate
             guard let latitude = coordinate?.latitude else {
                 XCTFail()

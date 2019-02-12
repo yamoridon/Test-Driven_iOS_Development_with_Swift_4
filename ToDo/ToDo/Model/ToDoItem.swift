@@ -42,4 +42,3 @@ struct ToDoItem: Equatable {
         self.location = location
     }
 }
-

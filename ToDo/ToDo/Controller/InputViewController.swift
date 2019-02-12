@@ -38,7 +38,7 @@ class InputViewController: UIViewController {
         let descriptionString = descriptionTextField.text
         if let locationName = locationTextField.text, !locationName.isEmpty {
             if let address = addressTextField.text, !address.isEmpty {
-                geocoder.geocodeAddressString(address) { [unowned self] placeMarks, error in
+                geocoder.geocodeAddressString(address) { [unowned self] placeMarks, _ in
                     let placeMark = placeMarks?.first
                     let item = ToDoItem(
                         title: titleString,

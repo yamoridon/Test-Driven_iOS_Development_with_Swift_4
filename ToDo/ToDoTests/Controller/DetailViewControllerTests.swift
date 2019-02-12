@@ -15,7 +15,8 @@ class DetailViewControllerTests: XCTestCase {
 
     override func setUp() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        sut = (storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController)
+        sut = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController
+        XCTAssertNotNil(sut)
 
         sut.loadViewIfNeeded()
     }

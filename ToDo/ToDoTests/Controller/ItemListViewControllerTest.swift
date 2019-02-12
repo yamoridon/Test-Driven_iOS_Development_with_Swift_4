@@ -15,7 +15,8 @@ class ItemListViewControllerTest: XCTestCase {
     override func setUp() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "ItemListViewController")
-        sut = (viewController as! ItemListViewController)
+        sut = viewController as? ItemListViewController
+        XCTAssertNotNil(sut)
 
         sut.loadViewIfNeeded()
     }
@@ -46,7 +47,6 @@ class ItemListViewControllerTest: XCTestCase {
         let target = sut.navigationItem.rightBarButtonItem?.target
         XCTAssertEqual(target as? UIViewController, sut)
     }
-
 
     func test_AddItem_PresetnsAddItemViewController() {
         guard let inputViewController = performAddButtonAction() else {

@@ -31,4 +31,3 @@ struct Location: Equatable {
         self.coordinate = coordinate
     }
 }
-
