@@ -71,4 +71,8 @@ class InputViewController: UIViewController {
 
         dismiss(animated: true, completion: nil)
     }
+
+    @IBAction func cancel(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
 }
