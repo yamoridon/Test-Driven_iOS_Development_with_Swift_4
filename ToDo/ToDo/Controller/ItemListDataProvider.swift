@@ -85,6 +85,21 @@ class ItemListDataProvider: NSObject, UITableViewDataSource, UITableViewDelegate
         }
         tableView.reloadData()
     }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let itemSelection = Section(rawValue: indexPath.section) else { fatalError() }
+
+        switch itemSelection {
+        case .toDo:
+            NotificationCenter.default.post(
+                name: Notification.Name("ItemSelectedNotification"),
+                object: self,
+                userInfo: ["index": indexPath.row]
+            )
+        default:
+            break
+        }
+    }
 }
 
 @objc protocol ItemManagerSettable {

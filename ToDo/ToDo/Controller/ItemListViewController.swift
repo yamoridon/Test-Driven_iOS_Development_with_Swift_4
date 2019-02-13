@@ -21,6 +21,13 @@ class ItemListViewController: UIViewController {
         tableView.delegate = dataProvider
 
         dataProvider.itemManager = itemManager
+
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(showDetails(sender:)),
+            name: Notification.Name("ItemSelectedNotification"),
+            object: nil
+        )
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -30,10 +37,22 @@ class ItemListViewController: UIViewController {
     }
 
     @IBAction func addItem(_ sender: UIBarButtonItem) {
-        if let nextViewController = storyboard?
-            .instantiateViewController(withIdentifier: "InputViewController") as? InputViewController {
+        let viewController = storyboard?.instantiateViewController(withIdentifier: "InputViewController")
+        if let nextViewController = viewController as? InputViewController {
             nextViewController.itemManager = itemManager
             present(nextViewController, animated: true, completion: nil)
+        }
+    }
+
+    @objc func showDetails(sender: Notification) {
+        guard let index = sender.userInfo?["index"] as? Int else {
+            fatalError()
+        }
+
+        let viewController = storyboard?.instantiateViewController(withIdentifier: "DetailViewController")
+        if let nextViewController = viewController as? DetailViewController {
+            nextViewController.itemInfo = (itemManager, index)
+            navigationController?.pushViewController(nextViewController, animated: true)
         }
     }
 }
