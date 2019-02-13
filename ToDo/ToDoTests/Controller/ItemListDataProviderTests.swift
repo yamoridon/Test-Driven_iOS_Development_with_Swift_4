@@ -33,6 +33,7 @@ class ItemListDataProviderTests: XCTestCase {
     }
 
     override func tearDown() {
+        sut.itemManager?.removeAll()
     }
 
     func test_NumberOfSections_IsTwo() {
