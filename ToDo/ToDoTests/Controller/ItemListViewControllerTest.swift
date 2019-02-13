@@ -100,6 +100,44 @@ class ItemListViewControllerTest: XCTestCase {
 
         XCTAssertTrue(mockTableView.reloadDataGotCalled)
     }
+
+    func test_ItemSelectedNotification_PushesDetailVC() {
+        let mockNavigationController = MockNavigationController(rootViewController: sut)
+        UIApplication.shared.keyWindow?.rootViewController = mockNavigationController
+
+        sut.loadViewIfNeeded()
+        sut.itemManager.add(ToDoItem(title: "Foo"))
+        sut.itemManager.add(ToDoItem(title: "Bar"))
+
+        let itemSelectedNotification = Notification.Name(rawValue: "ItemSelectedNotification")
+        NotificationCenter.default.post(
+            name: itemSelectedNotification,
+            object: self,
+            userInfo: ["index": 1]
+        )
+
+        let lastPushedViewController = mockNavigationController.lastPushedViewController
+        guard let detailViewController = lastPushedViewController as? DetailViewController else {
+            XCTFail()
+            return
+        }
+
+        guard let detailItemManager = detailViewController.itemInfo?.0 else {
+            XCTFail()
+            return
+        }
+
+        guard let index = detailViewController.itemInfo?.1 else {
+            XCTFail()
+            return
+        }
+
+        detailViewController.loadViewIfNeeded()
+
+        XCTAssertNotNil(detailViewController.titleLabel)
+        XCTAssertTrue(detailItemManager === sut.itemManager)
+        XCTAssertEqual(index, 1)
+    }
 }
 
 extension ItemListViewControllerTest {
@@ -108,6 +146,15 @@ extension ItemListViewControllerTest {
 
         override func reloadData() {
             reloadDataGotCalled = true
+        }
+    }
+
+    class MockNavigationController: UINavigationController {
+        var lastPushedViewController: UIViewController?
+
+        override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+            lastPushedViewController = viewController
+            super.pushViewController(viewController, animated: animated)
         }
     }
 }
