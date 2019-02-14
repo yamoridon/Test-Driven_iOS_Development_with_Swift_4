@@ -7,15 +7,4 @@ target 'ToDo' do
 
   # Pods for ToDo
   pod 'SwiftLint'
-
-  target 'ToDoTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'ToDoUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
 end
