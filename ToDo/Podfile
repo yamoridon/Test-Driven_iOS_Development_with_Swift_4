@@ -13,4 +13,9 @@ target 'ToDo' do
     # Pods for testing
   end
 
+  target 'ToDoUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
 end

@@ -49,7 +49,11 @@ class InputViewController: UIViewController {
                             coordinate: placeMark?.location?.coordinate
                         )
                     )
-                    self.itemManager?.add(item)
+
+                    DispatchQueue.main.async {
+                        self.itemManager?.add(item)
+                        self.dismiss(animated: true)
+                    }
                 }
             } else {
                 let item = ToDoItem(
@@ -59,6 +63,7 @@ class InputViewController: UIViewController {
                     location: Location(name: locationName)
                 )
                 itemManager?.add(item)
+                dismiss(animated: true)
             }
         } else {
             let item = ToDoItem(
@@ -67,12 +72,11 @@ class InputViewController: UIViewController {
                 timestamp: date?.timeIntervalSince1970
             )
             itemManager?.add(item)
+            dismiss(animated: true)
         }
-
-        dismiss(animated: true, completion: nil)
     }
 
     @IBAction func cancel(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: true)
     }
 }
